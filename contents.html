@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+	<title>Wolf - Bootstrap Admin Theme</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/compiled/theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/brankic.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/ionicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/jquery.dataTables.css" />
+
+	<!-- javascript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script src="js/vendor/jquery.cookie.js"></script>
+	<script src="js/theme.js"></script>
+
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body id="user-profile">
+	<div id="wrapper">
+		<div id="sidebar-default" class="main-sidebar">
+			<div class="current-user">
+				<a href="index.html" class="name">
+					<img class="avatar" src="images/avatars/1.jpg" />
+					<span>
+						John Smith
+						<i class="fa fa-chevron-down"></i>
+					</span>
+				</a>
+				<ul class="menu">
+					<li>
+						<a href="account-profile.html">Account settings</a>
+					</li>
+					<li>
+						<a href="account-billing.html">Billing</a>
+					</li>
+					<li>
+						<a href="account-notifications.html">Notifications</a>
+					</li>
+					<li>
+						<a href="account-support.html">Help / Support</a>
+					</li>
+					<li>
+						<a href="signup.html">Sign out</a>
+					</li>
+				</ul>
+			</div>
+			<div class="menu-section">
+				<h3>General</h3>
+				<script type="text/javascript" src="js/iframe.js?V=1.0.2"></script>
+			</div>
+			<div class="bottom-menu hidden-sm">
+				<ul>
+					<li><a href="#"><i class="ion-help"></i></a></li>
+					<li>
+						<a href="#">
+							<i class="ion-archive"></i>
+							<span class="flag"></span>
+						</a>
+						<ul class="menu">
+							<li><a href="#">5 unread messages</a></li>
+							<li><a href="#">12 tasks completed</a></li>
+							<!-- <li><a href="#">3 features added</a></li> -->
+						</ul>
+					</li>
+					<li><a href="signup.html"><i class="ion-log-out"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="content">
+			<div class="menubar">
+				<div class="sidebar-toggler visible-xs">
+					<i class="ion-navicon"></i>
+				</div>
+				
+				<div class="page-title">
+					John Stewart Profile
+					<small class="hidden-xs" style="font-weight:600;">All tabs have content</small>
+				</div>
+				<a href="#" class="pull-right btn btn-primary">添加内容</a>
+			</div>
+
+			<div class="content-wrapper clearfix">
+				<div class="profile-info">
+					<div class="avatar">
+						<img src="images/avatars/14.jpg" />
+						<div class="name">Karen Matthews</div>
+						<div class="position">Client</div>
+						<div class="social">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+						</div>
+					</div>
+					<div class="main-details clearfix">
+						<div class="col">
+							<div class="value">118</div>
+							Orders
+						</div>
+						<div class="col">
+							<div class="value">$31,250.00</div>
+							Lifetime spent
+						</div>
+					</div>
+					<div class="details">
+						<div class="field">
+							<label>Email</label>
+							<div class="value">johh.stewart@gmail.com</div>
+							<div class="sub">Home</div>
+						</div>
+						<div class="field">
+							<label>Phone</label>
+							<div class="value">(01) 123-123-1234</div>
+							<div class="sub">Home</div>
+						</div>
+						<div class="field">
+							<label>Address</label>
+							<div class="value">
+								5th Avenue 345 San Francisco 55589, CA. USA.
+							</div>
+						</div>
+						<div class="field">
+							<label>Signed up</label>
+							<div class="value">
+								03 Feb, 2013 (6 months ago)
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="profile-content">
+					<div class="tabs">
+						<ul>
+							<li>
+								<a href="#" class="active">图文</a>
+							</li>
+							<li>
+								<a href="#">音频</a>
+							</li>
+							<li>
+								<a href="#">视频</a>
+							</li>
+							<li>
+								<a href="#">专栏</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="tab-content">
+						<div class="tab orders notes active">
+							<table id="datatable-example" class="datatable-example">
+								<thead>
+								<tr>
+									<th tabindex="0" rowspan="1" colspan="1">封面
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">标题
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">付费类型
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">价格
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">所属专栏
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">上架时间
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">评论数
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">状态
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">操作
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>
+										<img src="images/avatars/2.jpg" width="50" />
+									</td>
+									<td>
+										标题1
+									</td>
+									<td>
+										内容付费
+									</td>
+									<td>$399.99</td>
+									<td>
+										图文专栏
+									</td>
+									<td>
+										Mar 10, 06:50am
+									</td>
+									<td>
+										500
+									</td>
+									<td>
+										启用
+									</td>
+									<td>
+										<a href="javascript:">修改</a>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab orders">
+							<table id="datatable-example2" class="datatable-example">
+								<thead>
+								<tr>
+									<th tabindex="0" rowspan="1" colspan="1">封面
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">标题
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">付费类型
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">价格
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">所属专栏
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">上架时间
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">统计
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">状态
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">操作
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>
+										<img src="images/avatars/2.jpg" width="50" />
+									</td>
+									<td>
+										标题1
+									</td>
+									<td>
+										内容付费
+									</td>
+									<td>$399.99</td>
+									<td>
+										图文专栏
+									</td>
+									<td>
+										Mar 10, 06:50am
+									</td>
+									<td>
+										500
+									</td>
+									<td>
+										启用
+									</td>
+									<td>
+										<a href="javascript:">修改</a>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab orders">
+							<table id="datatable-example3" class="datatable-example">
+								<thead>
+								<tr>
+									<th tabindex="0" rowspan="1" colspan="1">封面
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">标题
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">付费类型
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">价格
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">所属专栏
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">上架时间
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">统计
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">状态
+									</th>
+									<th tabindex="0" rowspan="1" colspan="1">操作
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>
+										<img src="images/avatars/2.jpg" width="50" />
+									</td>
+									<td>
+										标题1
+									</td>
+									<td>
+										内容付费
+									</td>
+									<td>$399.99</td>
+									<td>
+										图文专栏
+									</td>
+									<td>
+										Mar 10, 06:50am
+									</td>
+									<td>
+										500
+									</td>
+									<td>
+										启用
+									</td>
+									<td>
+										<a href="javascript:">修改</a>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab work ">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/1.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/2.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/3.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/4.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/5.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/6.jpg" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/7.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/8.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/9.png" />
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="pic">
+										<div class="mask">
+											<div class="title">My Finder</div>
+											<div class="description">
+												I was working on it a little too while ago
+												and thought I tink this is getting pretty good.
+											</div>
+											<div class="date">
+												08 Feb, 2014
+											</div>
+										</div>
+										<img class="img-responsive" src="images/shots/10.png" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+        $(function() {
+
+        	// tabs
+        	var $tabs = $(".tabs a");
+        	var $tab_contents = $(".tab-content .tab");
+
+        	$tabs.click(function (e) {
+        		e.preventDefault();
+        		var index = $tabs.index(this);
+
+        		$tabs.removeClass("active");
+        		$tabs.eq(index).addClass("active");
+
+        		$tab_contents.removeClass("active");
+        		$tab_contents.eq(index).addClass("active");
+        	});
+
+
+        	// orders datatable 
+            //$('#datatable-example').dataTable({
+            $('.datatable-example').dataTable({
+                "sPaginationType": "full_numbers",
+                "iDisplayLength": 20,
+    			"aLengthMenu": [[20, 50, 100, -1], [20, 50, 100, "All"]]
+            });
+        });
+    </script>
+
+</body>
+</html>

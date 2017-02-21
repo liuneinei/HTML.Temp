@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+	<title>Wolf - Bootstrap Admin Theme</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/compiled/theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/brankic.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/ionicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css" />
+
+	<!-- javascript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/vendor/jquery.cookie.js"></script>
+	<script src="js/theme.js"></script>
+
+	<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body id="projects">
+	<div id="wrapper">
+		<div id="sidebar-default" class="main-sidebar">
+			<div class="current-user">
+				<a href="index.html" class="name">
+					<img class="avatar" src="images/avatars/1.jpg" />
+					<span>
+						John Smith
+						<i class="fa fa-chevron-down"></i>
+					</span>
+				</a>
+				<ul class="menu">
+					<li>
+						<a href="account-profile.html">Account settings</a>
+					</li>
+					<li>
+						<a href="account-billing.html">Billing</a>
+					</li>
+					<li>
+						<a href="account-notifications.html">Notifications</a>
+					</li>
+					<li>
+						<a href="account-support.html">Help / Support</a>
+					</li>
+					<li>
+						<a href="signup.html">Sign out</a>
+					</li>
+				</ul>
+			</div>
+			<div class="menu-section">
+				<h3>General</h3>
+				<script type="text/javascript" src="js/iframe.js?v=1.0.2z"></script>
+			</div>
+			<div class="bottom-menu hidden-sm">
+				<ul>
+					<li><a href="#"><i class="ion-help"></i></a></li>
+					<li>
+						<a href="#">
+							<i class="ion-archive"></i>
+							<span class="flag"></span>
+						</a>
+						<ul class="menu">
+							<li><a href="#">5 unread messages</a></li>
+							<li><a href="#">12 tasks completed</a></li>
+							<!-- <li><a href="#">3 features added</a></li> -->
+						</ul>
+					</li>
+					<li><a href="signup.html"><i class="ion-log-out"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="content">
+			<div class="menubar">
+				<div class="sidebar-toggler visible-xs">
+					<i class="ion-navicon"></i>
+				</div>
+
+				<div class="page-title">
+					My Projects 
+					<small class="hidden-xs">(Widget list concept)</small>
+				</div>
+				<!--<a href="form.html" class="new-user btn btn-success pull-right">-->
+					<!--<span>Add project</span>-->
+				<!--</a>-->
+			</div>
+
+			<div class="content-wrapper clearfix">
+				<div class="row project-list">
+					<div class="project new">
+						<a href="addcontent.html">
+							<i class="ion-ios7-plus-outline"></i>
+							<span class="info">
+								新增图文
+							</span>
+						</a>
+						<div class="members text-center">
+							<img src="images/avatars/3.jpg" />
+							<img src="images/avatars/7.jpg" />
+							<img src="images/avatars/14.jpg" />
+							<img src="images/avatars/15.jpg" />
+						</div>
+					</div>
+					<div class="project new">
+						<a href="addcontent.html">
+							<i class="ion-ios7-plus-outline"></i>
+							<span class="info">
+								新增音频
+							</span>
+						</a>
+						<div class="members text-center">
+							<img src="images/avatars/3.jpg" />
+							<img src="images/avatars/7.jpg" />
+							<img src="images/avatars/14.jpg" />
+							<img src="images/avatars/15.jpg" />
+						</div>
+					</div>
+					<div class="project new">
+						<a href="addcontent.html">
+							<i class="ion-ios7-plus-outline"></i>
+							<span class="info">
+								新增视频
+							</span>
+						</a>
+						<div class="members text-center">
+							<img src="images/avatars/3.jpg" />
+							<img src="images/avatars/7.jpg" />
+							<img src="images/avatars/14.jpg" />
+							<img src="images/avatars/15.jpg" />
+						</div>
+					</div>
+					<div class="project new">
+						<a href="addCloumn.html">
+							<i class="ion-ios7-plus-outline"></i>
+							<span class="info">
+								新增专栏
+							</span>
+						</a>
+						<div class="members text-center">
+							<img src="images/avatars/3.jpg" />
+							<img src="images/avatars/7.jpg" />
+							<img src="images/avatars/14.jpg" />
+							<img src="images/avatars/15.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function () {
+			var $projects = $(".project");
+
+			$projects.each(function (index, el) {
+				var $btn = $(el).find(".add-more");
+				var $menu = $btn.siblings(".menu");
+				var timeout;
+
+				$btn.click(function (e) { e.preventDefault(); });
+
+				$(el).on("mouseenter", ".add-more, .menu", function () {
+					clearTimeout(timeout);
+					timeout = null;
+					$menu.addClass("active");
+				});
+
+				$(el).on("mouseleave", ".add-more, .menu", function () {
+					timeout = setTimeout(function () {
+						$menu.removeClass("active");
+					}, 400);
+				});
+			})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Wolf - Bootstrap Admin Theme</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/compiled/theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/ionicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/brankic.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/datepicker.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/jquery.dataTables.css" />
+
+	<!-- javascript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/vendor/bootstrap-datepicker.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script src="js/vendor/jquery.cookie.js"></script>
+	<script src="js/theme.js"></script>
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body id="search">
+<div id="wrapper">
+	<div id="sidebar-default" class="main-sidebar">
+		<div class="current-user">
+			<a href="index.html" class="name">
+				<img class="avatar" src="images/avatars/1.jpg" />
+				<span>
+						John Smith
+						<i class="fa fa-chevron-down"></i>
+					</span>
+			</a>
+			<ul class="menu">
+				<li>
+					<a href="account-profile.html">Account settings</a>
+				</li>
+				<li>
+					<a href="account-billing.html">Billing</a>
+				</li>
+				<li>
+					<a href="account-notifications.html">Notifications</a>
+				</li>
+				<li>
+					<a href="account-support.html">Help / Support</a>
+				</li>
+				<li>
+					<a href="signup.html">Sign out</a>
+				</li>
+			</ul>
+		</div>
+		<div class="menu-section">
+			<h3>General</h3>
+			<script type="text/javascript" src="js/iframe.js?v=1.0.1.2"></script>
+		</div>
+		<div class="bottom-menu hidden-sm">
+			<ul>
+				<li><a href="#"><i class="ion-help"></i></a></li>
+				<li>
+					<a href="#">
+						<i class="ion-archive"></i>
+						<span class="flag"></span>
+					</a>
+					<ul class="menu">
+						<li><a href="#">5 unread messages</a></li>
+						<li><a href="#">12 tasks completed</a></li>
+						<!-- <li><a href="#">3 features added</a></li> -->
+					</ul>
+				</li>
+				<li><a href="signup.html"><i class="ion-log-out"></i></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="menubar">
+			<div class="sidebar-toggler visible-xs">
+				<i class="ion-navicon"></i>
+			</div>
+
+			<div class="page-title">
+				Search results with filter
+				<small class="hidden-xs hidden-sm">
+					<strong>Click on the filter checkboxes!</strong>
+				</small>
+			</div>
+		</div>
+
+		<div class="content-wrapper clearfix">
+			<div class="results" style="float: none;width: 100%">
+
+				<table id="datatable-example" class="datatable-example" style="width: 100%">
+					<thead>
+					<tr>
+						<th tabindex="0" rowspan="1" colspan="1">
+							<input class="toggle-all" type="checkbox" />
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">头像
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">昵称
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">性别
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">手机号码
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">消费总额(元)
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">用户创建时间
+						</th>
+						<th tabindex="0" rowspan="1" colspan="1">操作
+						</th>
+						</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							<input name="select-product" type="checkbox" />
+						</td>
+						<td>
+							<img class="img-responsive product-img" src="images/products/2.png" />
+						</td>
+						<td>Some product name</td>
+						<td>男</td>
+						<td>13512345677</td>
+						<td class="center">$159.99</td>
+						<td>2017-01-01</td>
+						<td>
+							<a href="#">修改</a>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        var $filters = $(".filters .filter input:checkbox");
+
+        $filters.change(function () {
+            var $option = $(this).closest(".filter").find(".filter-option");
+
+            if ($(this).is(":checked")) {
+                $option.slideDown(150, function () {
+                    $option.find("input:text:eq(0)").focus();
+                });
+            } else {
+                $option.slideUp(150);
+            }
+        });
+
+        // Filter dropdown options for Created date, show/hide datepicker or input text
+        var $dropdown_switcher = $(".field-switch");
+        $dropdown_switcher.change(function () {
+            var field_class = $(this).find("option:selected").data("field");
+            var $filter_option = $(this).closest(".filter-option");
+            $filter_option.find(".field").hide();
+            $filter_option.find(".field." + field_class).show();
+
+            if (field_class === "calendar") {
+                $filter_option.find(".datepicker").datepicker("show");
+            } else {
+                $filter_option.find(".field." + field_class + " input:text").focus();
+            }
+        });
+
+        // Datepicker
+        $('.datepicker').datepicker({
+            autoclose: true
+            , orientation: 'right top'
+            // , endDate: new Date()
+        });
+
+//        $('#datatable-example').dataTable({
+//            "sPaginationType": "full_numbers",
+//            "iDisplayLength": 20,
+//            "aLengthMenu": [[20, 50, 100, -1], [20, 50, 100, "All"]]
+//        });
+
+        // Bulk actions checkboxes
+
+        var $toggle_all = $("input:checkbox.toggle-all");
+        var $checkboxes = $("[name='select-product']");
+        var $bulk_actions_btn = $(".bulk-actions .dropdown-toggle");
+
+        $toggle_all.change(function () {
+            var checked = $toggle_all.is(":checked");
+            if (checked) {
+                $checkboxes.prop("checked", "checked");
+                toggleBulkActions(true);
+            } else {
+                $checkboxes.prop("checked", "");
+                toggleBulkActions(false);
+            }
+        });
+
+        $checkboxes.change(function () {
+            var anyChecked = $("[name='select-product']:checked");
+            toggleBulkActions(anyChecked.length);
+        });
+
+        function toggleBulkActions(show) {
+            if (show) {
+                $bulk_actions_btn.removeClass("disabled");
+            } else {
+                $bulk_actions_btn.addClass("disabled");
+            }
+        }
+    });
+</script>
+</body>
+</html>
